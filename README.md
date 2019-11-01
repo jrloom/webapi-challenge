@@ -26,13 +26,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+>The homies, req and res, are two objects that are always passed into functions in Express (e.g. `server.get('/', (req, res) => {})`) to handle requests from and send responses to the client.
+
+>How to organize server-side routes using Express router.
+
 - [ ] Describe Middleware?
+
+>Middleware are functions that extend software, and are executed in the order they're introduced into the code. They take in req, res, and next() (and, for handling errors, an error parameter is passed in first). Almost everything is middleware - some are built into Express (e.g. express.json), some are third-party packages (e.g. morgan for logging), or written by the programmer (e.g. routes and route validation).
 
 - [ ] Describe a Resource?
 
+>Resources are the nouns of an application - icons, text, images, etc. They are requested by clients, and (hopefully) sent as a respone by the server.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+>2xx HTTP status code - e.g. status 200 means "ok", status 201 means "created".
+
 - [ ] How can we partition our application into sub-applications?
+
+>By using Express routers to separate different types of routes into their own files and/or directores. Type 'action' might go into actions.js (or, more  explicitly, actionsRouter.js) while type 'project' might go into project.js. Those two files would then be pulled into a main file using `require`, and utilized with `server.use()`.
 
 ## Project Setup
 
