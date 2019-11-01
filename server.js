@@ -12,6 +12,8 @@ if (server.get("env") === "development") {
 }
 
 // * routers
+server.use("/api/actions", require("./routes/actions"));
+server.use("/api/projects", require("./routes/projects"));
 
 // * sanity
 server.get("/", (req, res) => res.status(200).json({ message: "Good things" }));
